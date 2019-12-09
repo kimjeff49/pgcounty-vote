@@ -129,7 +129,7 @@
     }
 
     .location_container{
-        padding-top: 5%;
+        padding-top: 2%;
         display: flex;
         flex-direction: row;
     }
@@ -138,13 +138,13 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding-left: 10%;
-        padding-right: 10%;
+        padding-left: 5%;
+        padding-right: 5%;
         color: white;
         font-family: 'Archivo';
+        justify-content: center;
     }
     
     #map {
         position: relative;
         height: 100%;
-      }
