@@ -5,7 +5,7 @@ const fetch = require('node-fetch');
 const opencage = require('opencage-api-client');
 const LocalStorage = require('node-localstorage').LocalStorage;
 
-localStorage = new LocalStorage('./scratch');
+localStorage = new LocalStorage('./src/static/data');
 const app = express();
 const port = process.env.PORT || 3000;
 
