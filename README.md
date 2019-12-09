@@ -58,7 +58,7 @@ Determines the icon that represents the web application in a browser tab.
 Describes the project, its scripts, and dependencies.
 > ### server.js
 The entry point for the application and contains all of the code for starting the Node.js server.
-> ### webpack.config.js
-Contains all of the configurations for the webpack development dependency.
 ### API
-The only endpoint for our server is a GET endpoint by `'/api/pollingloc'` that pulls the data from the PG county open API.
+- The GET endpoint by `'/api/polling'` that pulls the data from the PG county open API.
+- Then POST endpoint by `'/api/calculate'` that takes the data from PG county open API and then creates new data housing the closest idstance, closest location, and the current location reverse geocoded.
+- The PUT endpoint by `'/api/distance'` that returns the data calculated by the POST endpoint.
