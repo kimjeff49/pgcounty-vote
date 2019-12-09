@@ -142,6 +142,7 @@
         padding-right: 5%;
         color: white;
         font-family: 'Archivo';
+        justify-content: center;
     }
     
     #map {
