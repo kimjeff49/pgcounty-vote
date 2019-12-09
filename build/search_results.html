@@ -161,7 +161,7 @@
       function putData() {
         return fetch('/api/distance', {
           method: 'PUT'
-        }).then(res => res.json());
+        });
       }
 
       function success(pos) {
@@ -180,6 +180,7 @@
             postData(data);
           })
           .then(res => putData())
+          .then(res => res.json())
           .then(res => {
             const marker2 = L.marker([
               res.PollingLocation.lat,
