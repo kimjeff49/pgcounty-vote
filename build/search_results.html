@@ -151,7 +151,7 @@
           cache: 'no-cache',
           credentials: 'same-origin',
           headers: {
-              'Content-Type': 'application/json'
+            'Content-Type': 'application/json'
           },
           redirect: 'follow',
           referrer: 'no-referrer',
@@ -160,7 +160,7 @@
       }
       function putData() {
         return fetch('/api/distance', {
-            method: 'PUT'
+          method: 'PUT'
         }).then(res => res.json());
       }
 
@@ -172,12 +172,12 @@
         // map.setView([lat, long], 18);
         getData()
           .then(res => {
-              let data = {
-                  polling: res.data,
-                  latitude: lat,
-                  longitude: long
-              }
-              postData(data)
+            let data = {
+              polling: res.data,
+              latitude: lat,
+              longitude: long
+            };
+            postData(data);
           })
           .then(res => putData())
           .then(res => {
@@ -188,9 +188,13 @@
             const group = new L.featureGroup([marker1, marker2]);
             map.fitBounds(group.getBounds());
             return res;
-          }).then(res => {
-            document.querySelector('.current-location p').innerHTML = res.CurrentLocation;
-            document.querySelector('.voting-location p').innerHTML = `${res.PollingLocation.address}, ${res.PollingLocation.city}`;
+          })
+          .then(res => {
+            document.querySelector('.current-location p').innerHTML =
+              res.CurrentLocation;
+            document.querySelector(
+              '.voting-location p'
+            ).innerHTML = `${res.PollingLocation.address}, ${res.PollingLocation.city}`;
           });
       }
 
