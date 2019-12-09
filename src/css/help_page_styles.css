@@ -1,0 +1,139 @@
+body{
+    background: #f2f2f2;
+    font-family: 'Archivo';
+    }
+    
+    .search {
+    width: 100%;
+    position: relative;
+    display: flex;
+    }
+    
+    .searchTerm {
+    width: 100%;
+    border: 3px solid rgb(196,196,196);
+    border-right: none;
+    padding: 5px;
+    height: 36px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: rgb(148, 185, 204);;
+    }
+    
+    .searchTerm:focus{
+    color: rgb(0, 0, 0);
+    }
+    
+    .searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid rgb(196, 196, 196);
+    background: rgb(196, 196, 196);
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+    }
+    
+    /*Resize the wrap to see the search bar change!*/
+    .wrap{
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+        justify-content: center;
+    }
+    
+    #footer {
+        display: flex;
+        justify-content: center; 
+        color: white; 
+        font-family: Archivo;
+        font-size: 20px
+    }
+    
+    body, html {
+        height: 100%;
+    }
+    
+    .bg {
+        /* The image used */
+        background-image: 
+        linear-gradient(
+        rgba(128, 128, 128, 0.55),
+        rgba(128, 128, 128, 0.55)
+        ),
+        /* bottom, image */
+        url("../static/search_page_background_2.jpg");
+    
+        /* Full height */
+        height: 100%;
+    
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .nav-link{
+        color: white;
+        float: right;
+    }
+    
+    .nav-link:hover{
+        border-bottom: 2px solid white;
+        color: white;
+    }
+    
+    .need_help{
+        text-align: center; 
+        padding-top: 0.5rem;
+        text-decoration: none;
+        font-family: 'Archivo';
+        color: white;
+        font-size: 14pt;
+    }
+    
+    .navbar.transparent.navbar-inverse .navbar-inner {
+        border-width: 0px;
+        -webkit-box-shadow: 0px 0px;
+        box-shadow: 0px 0px;
+        background-color: rgba(0,0,0,0.0);
+        background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
+        background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+        background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+    }
+    
+    .nav-tabs-right {
+        text-align:right;
+      }
+      
+      .nav-tabs-right > li {
+        display:inline-block;
+        float:none;
+      }
+
+      .list-content{
+        color: white;
+        font-size: 12pt;
+        font-family: 'Archivo';
+    }
+
+    .about_body_1{
+        position: relative;
+        padding-left: 10%;
+        padding-top: 10%;
+    }
+
+    .about_body_2{
+        position: relative;
+        padding-left: 10%;
+        padding-top: 5%;
+    }
+
+    .gif{
+        border: 2px solid white;
+        float: right; 
+        overflow: auto; 
+        margin: 0 20% 5% 5%;
+    }

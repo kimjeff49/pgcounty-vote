@@ -1,14 +1,72 @@
-@media all and (max-height: 610px){
-    body, html{
-        background-color: black;
-    }
+@media all and (max-width: 764px){
 
     .learn_more_container{
         display: none;
     }
+
+    .information_container{
+        display: flex;
+        background-image: url('../static/maryland flag.png');
+    }
+
+    .information_grid{
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        width: 100%;
+    }
+
+    .option_list{
+        float: left;
+        width: auto;
+        min-height: 25%;
+        margin: 5%;
+    }
+
+    .option_list_spacing{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border-left: 0px solid rgb(190, 55, 55);
+        transition: all .2s ease-in;
+    }
+
+    .option_list_spacing:hover{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border-left: 5px solid rgb(190, 55, 55);
+        background-color: rgb(245, 245, 245, 25%);
+        border-radius: 2px;
+    }
+
+    ul {
+        display: block;
+        list-style-type: disc;
+    }
+
+    ul > :first-child{
+        border-left: 5px solid rgb(190, 55, 55);
+    }
+
+    .option_list_items{
+        font-family: 'Archivo';
+        color: white;
+        text-decoration: none;
+        font-size: 12pt;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .option_list_items:hover{
+        font-family: 'Archivo';
+        color: white;
+        text-decoration: none;
+        font-size: 12pt;
+        padding-left: 1rem;
+    }
 }
 
-@media all and (min-width: 760px) {
+@media all and (min-width: 764px) {
 
         body, html {
             height: 100%;
@@ -17,8 +75,6 @@
         .introduction_content{
             margin-left: auto;
             margin-right: auto;
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
             display: flex;
             flex-direction: row;
             height: 30%;
@@ -49,13 +105,16 @@
         .option_list_spacing{
             margin-top: 1rem;
             margin-bottom: 1rem;
+            border-left: 0px solid rgb(190, 55, 55);
+            transition: all .2s ease-in;
         }
     
         .option_list_spacing:hover{
             margin-top: 1rem;
             margin-bottom: 1rem;
-            border-left: 5px solid white;
+            border-left: 5px solid rgb(190, 55, 55);
             background-color: rgb(245, 245, 245, 25%);
+            border-radius: 2px;
         }
     
         ul {
@@ -64,7 +123,7 @@
         }
     
         ul > :first-child{
-            border-left: 5px solid white;
+            border-left: 5px solid rgb(190, 55, 55);
         }
     
         .option_list_items{
@@ -88,7 +147,7 @@
             float: right;
             width: 400px;
             height: auto;
-            border: 1px solid white;
+            border: 3px solid white;
             margin-top: 5%;
             display: flex;
             flex-direction: column;
@@ -162,6 +221,64 @@
             border-radius: 10px 0px 10px 0px;
             background-size: contain;
         }
+
+        .carousel_container{
+            height: 60%;
+            display: flex;
+        }
+
+        .rep_carousel{
+            display: flex;
+            flex-direction: row;
+            width: 70%;
+        }
+
+        .rep_sidebar{
+            display: flex;
+            flex-direction: row;
+            width: 30%;
+        }
+
+        
+/* equal card height */
+.row-equal > div[class*='col-'] {
+    display: flex;
+    flex: 1 0 auto;
+}
+
+.row-equal .card {
+   width: 100%;
+}
+
+/* ensure equal card height inside carousel */
+.carousel-inner>.row-equal.active, 
+.carousel-inner>.row-equal.next, 
+.carousel-inner>.row-equal.prev {
+    display: flex;
+}
+
+/* prevent flicker during transition */
+.carousel-inner>.row-equal.active.left, 
+.carousel-inner>.row-equal.active.right {
+    opacity: 0.5;
+    display: flex;
+}
+
+
+/* control image height */
+.card-img-top-250 {
+    max-height: 250px;
+    overflow:hidden;
+}
+
+.footer_div{
+    height: 5%;
+    width: auto;
+}
+
+.learn_more_button{
+    padding-bottom: 0.5rem;
+}
     }
 
 
