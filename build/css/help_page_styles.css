@@ -130,3 +130,10 @@ body{
         padding-left: 10%;
         padding-top: 5%;
     }
+
+    .gif{
+        border: 2px solid white;
+        float: right; 
+        overflow: auto; 
+        margin: 0 20% 5% 5%;
+    }
