@@ -116,30 +116,6 @@
         maximumAge: 0
       };
 
-      // https://www.w3resource.com/javascript-exercises/javascript-math-exercise-33.php
-      function toRadians(val) {
-        let pi = Math.PI;
-        return val * (pi / 180);
-      }
-
-      // https://www.movable-type.co.uk/scripts/latlong.html
-      function calculateGeoDistance(lat1, lat2, lon1, lon2) {
-        let R = 6371e3;
-        let φ1 = toRadians(lat1);
-        let φ2 = toRadians(lat2);
-        let Δφ = toRadians(lat2 - lat1);
-        let Δλ = toRadians(lon2 - lon1);
-
-        let a =
-          Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
-          Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
-        let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-
-        let d = R * c;
-
-        return d;
-      }
-
       function getData() {
         return fetch('/api/polling').then(res => res.json());
       }
