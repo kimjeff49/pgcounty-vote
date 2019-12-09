@@ -1,171 +1,220 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!--Search Results Stylesheet-->
-    <link rel="stylesheet" href="css/search_results_styles.css">
+    <link rel="stylesheet" href="css/search_results_styles.css" />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
 
     <!--Google Archivo Font-->
-    <link href='https://fonts.googleapis.com/css?family=Archivo' rel='stylesheet'>
+    <link
+      href="https://fonts.googleapis.com/css?family=Archivo"
+      rel="stylesheet"
+    />
 
     <!--Font Awesome Icons-->
-    <script src="https://kit.fontawesome.com/cc2af53486.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/cc2af53486.js"
+      crossorigin="anonymous"
+    ></script>
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-   crossorigin=""/>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
 
     <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-    crossorigin=""></script>
+    <script
+      src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""
+    ></script>
 
     <title>Search Results</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="bg">
-        <nav class="navbar navbar-inverse transparent">
-            <a class="navbar-brand" href="index.html" style="color: white"><i class="fas fa-chevron-left"
-                    style="color: white"></i> Home </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <ul class="nav justify-content-end">
-                <li class="nav-item">
-                    <a class="nav-link" href="about_page.html">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="help_page.html">Help</a>
-                </li>
-            </ul>
-        </nav>
+      <nav class="navbar navbar-inverse transparent">
+        <a class="navbar-brand" href="index.html" style="color: white"
+          ><i class="fas fa-chevron-left" style="color: white"></i> Home
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="about_page.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="help_page.html">Help</a>
+          </li>
+        </ul>
+      </nav>
 
-        <div class="leaflet_container">
-            <div id="map"></div>
+      <div class="leaflet_container">
+        <div id="map"></div>
+      </div>
+      <div class="location_container">
+        <div class="current-location location">
+          <h3>Your current location is:</h3>
+          <p>Current location placeholder</p>
         </div>
-        <div class="location_container">
-            <div class="location">
-                <h3> Your current location is:</h3>
-                <p> Current location placeholder </p>
-            </div>
-            <div class="location">
-                <h3> Your voting location is:</h3>
-                <p> Voting location placeholder </p>
-            </div>
+        <div class="voting-location location">
+          <h3>Your voting location is:</h3>
+          <p>Voting location placeholder</p>
         </div>
+      </div>
+    </div>
 
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-        <script src="./dist/bundle.js"></script>
-        <script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const map = L.map('map');
 
-            const map = L.map('map');
+      var options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+      };
 
-            var options = {
-                enableHighAccuracy: true,
-                timeout: 5000,
-                maximumAge: 0
+      // https://www.w3resource.com/javascript-exercises/javascript-math-exercise-33.php
+      function toRadians(val) {
+        let pi = Math.PI;
+        return val * (pi / 180);
+      }
+
+      // https://www.movable-type.co.uk/scripts/latlong.html
+      function calculateGeoDistance(lat1, lat2, lon1, lon2) {
+        let R = 6371e3;
+        let φ1 = toRadians(lat1);
+        let φ2 = toRadians(lat2);
+        let Δφ = toRadians(lat2 - lat1);
+        let Δλ = toRadians(lon2 - lon1);
+
+        let a =
+          Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
+          Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
+        let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+        let d = R * c;
+
+        return d;
+      }
+
+      function getData() {
+        return fetch('/api/polling').then(res => res.json());
+      }
+
+      function postData(data) {
+        return fetch('/api/calculate', {
+          method: 'POST',
+          mode: 'cors',
+          cache: 'no-cache',
+          credentials: 'same-origin',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          redirect: 'follow',
+          referrer: 'no-referrer',
+          body: JSON.stringify(data)
+        });
+      }
+      function putData() {
+        return fetch('/api/distance', {
+          method: 'PUT'
+        }).then(res => res.json());
+      }
+
+      function success(pos) {
+        const crd = pos.coords;
+        const long = crd.longitude;
+        const lat = crd.latitude;
+        const marker1 = L.marker([lat, long]).addTo(map);
+        // map.setView([lat, long], 18);
+        getData()
+          .then(res => {
+            let data = {
+              polling: res.data,
+              latitude: lat,
+              longitude: long
             };
+            postData(data);
+          })
+          .then(res => putData())
+          .then(res => {
+            const marker2 = L.marker([
+              res.PollingLocation.lat,
+              res.PollingLocation.long
+            ]).addTo(map);
+            const group = new L.featureGroup([marker1, marker2]);
+            map.fitBounds(group.getBounds());
+            return res;
+          })
+          .then(res => {
+            document.querySelector('.current-location p').innerHTML =
+              res.CurrentLocation;
+            document.querySelector(
+              '.voting-location p'
+            ).innerHTML = `${res.PollingLocation.address}, ${res.PollingLocation.city}`;
+          });
+      }
 
-            // https://www.w3resource.com/javascript-exercises/javascript-math-exercise-33.php
-            function toRadians(val) {
-                let pi = Math.PI;
-                return val * (pi / 180);
-            }
+      function error(err) {
+        console.warn(`ERROR(${err.code}): ${err.message}`);
+      }
 
-            // https://www.movable-type.co.uk/scripts/latlong.html
-            function calculateGeoDistance (lat1, lat2, lon1, lon2) {
-                let R = 6371e3;
-                let φ1 = toRadians(lat1);
-                let φ2 = toRadians(lat2);
-                let Δφ = toRadians(lat2-lat1);
-                let Δλ = toRadians(lon2-lon1);
+      navigator.geolocation.getCurrentPosition(success, error, options);
+      //  .then(res => L.map('map').setView([res.lat, res.long], 18))
+      // .catch(err => console.log('hi'));
 
-                let a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
-                        Math.cos(φ1) * Math.cos(φ2) *
-                        Math.sin(Δλ/2) * Math.sin(Δλ/2);
-                let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+      // Leaflet
 
-                let d = R * c;
-
-                return d;
-            }
-
-            function getData (lat, long) {
-            return fetch('https://data.princegeorgescountymd.gov/resource/2v6d-7p4w.json')
-                .then(res => res.json())
-                .then(res => {
-                let lowestDistance = Number.MAX_SAFE_INTEGER;
-                let lowestPlace = 0;
-                for (let i = 0; i < res.length; i++) {
-                    const distance = calculateGeoDistance(res[i].lat, lat, long, res[i].long);
-                    if (distance < lowestDistance) {
-                    lowestPlace = i;
-                    lowestDistance = distance;
-                    }
-                }
-
-                return { pollingLoc: res[lowestPlace], pollingDist: lowestDistance };
-                });
-            }
-
-            function success (pos) {
-                const crd = pos.coords;
-                const long = crd.longitude;
-                const lat = crd.latitude;
-                const marker1 = L.marker([lat, long]).addTo(map);
-                // map.setView([lat, long], 18);
-                getData(lat, long)
-                    .then(res => {
-                        const marker2 = L.marker([res.pollingLoc.lat, res.pollingLoc.long]).addTo(map);
-                        const group = new L.featureGroup([marker1, marker2]);
-                        map.fitBounds(group.getBounds());
-                        return res;
-                    })
-                    .then(res => {
-                        // const midpoint = calculateMidpoint(lat, 39.09718355363024, long, -76.85463504670246);
-                    });
-            }
-            function error (err) {
-                console.warn(`ERROR(${err.code}): ${err.message}`);
-            }
-
-            navigator.geolocation.getCurrentPosition(success, error, options)
-            //  .then(res => L.map('map').setView([res.lat, res.long], 18))
-            // .catch(err => console.log('hi'));
-
-            // Leaflet
-
-            L.tileLayer(
-            'https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=BCBTN1mLGrjkFnZk42Dl',
-            {
-                attribution:
-                '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
-            }
-            ).addTo(map);
-
-            const marker = L.marker([51.5, -0.09]).addTo(map);
-        </script>
-
-</body>
-
+      L.tileLayer(
+        'https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=BCBTN1mLGrjkFnZk42Dl',
+        {
+          attribution:
+            '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+        }
+      ).addTo(map);
+    </script>
+  </body>
 </html>
