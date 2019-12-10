@@ -1,5 +1,5 @@
 # PGVote
-### Introduction
+## Introduction
 PGVote is a simple web app built on HTML/CSS/JS with NodeJS and Express middleware. Its purpose is to allow PG residents or students attending UMD to find the polling place closest to their address.
 ### Heroku
 The Heroku is hosted at https://pgcounty-vote.herokuapp.com/
@@ -59,6 +59,23 @@ Describes the project, its scripts, and dependencies.
 > ### server.js
 The entry point for the application and contains all of the code for starting the Node.js server.
 ### API
-- The GET endpoint by `'/api/polling'` that pulls the data from the PG county open API.
-- Then POST endpoint by `'/api/calculate'` that takes the data from PG county open API and then creates new data housing the closest idstance, closest location, and the current location reverse geocoded.
-- The PUT endpoint by `'/api/distance'` that returns the data calculated by the POST endpoint.
+The GET endpoint by `'/api/polling'` that pulls the data from the PG county open API.
+<br>
+
+The POST endpoint by `'/api/calculate'` that takes the data from PG county open API and then creates new data housing the closest distance, closest location, and the current location reverse geocoded.
+<br>
+
+The PUT endpoint by `'/api/distance'` that returns the data calculated by the POST endpoint.
+### Known Bugs
+#### Unexpected end of JSON output
+Sometimes the application will send this response within the console, however there is just a problem within our promise chain and our data handling, this is something that we are aware of and will move forward to fix.
+#### UI handling for geolocation services
+We did not put any handling for when the user accidently hits no on the geolocation request, so that needs to be implemented.
+### Future Roadmap
+1. Add handling on the UI end for geolocation services
+2. Separate JS from HTML and add Webpack, Gulp, and Babel for bundling JS files
+3. Remove API from `server.js` and abstract into controllers, models, and routers.
+4. Combine all CSS into `style.css`.
+5. Migrate to Sass for better maintainability.
+6. Integrate MongoDB instead of using localStorage.
+7. Separate `server.js` and create abstraction into `app.js`.
