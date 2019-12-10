@@ -7,9 +7,7 @@ The Heroku is hosted at https://pgcounty-vote.herokuapp.com/
 Our web app is built to be responsive and should adapt to any browser width or height.
 ### User Manual
 If you are looking to learn how to use our web app, [click here](./docs/user.md) for the User Manual.
-### Developer Manual
-If you are looking to documentation for our web app, [click here](##Documentation)
-## Documentation
+## Documentation/Developer Manual
 Welcome to the documentation section of our README! This should guide you, a future developer on our application, through the nooks and crannies of our web app!
 ### Onboarding
 If you are new to npm, node.js, or even Git, this is the place for you! Here you will find what you need as a developer when you've just cloned this repository from Github.
